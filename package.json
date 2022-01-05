@@ -1,0 +1,30 @@
+{
+  "name": "linebot_toolbot",
+  "version": "1.0.0",
+  "description": "A tool bot",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js --ignore 'data/*.json'",
+    "debug": "nodemon index.js debug --ignore 'data/*.json'",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZhongJunJimmy/lineBot_toolBot.git"
+  },
+  "keywords": [
+    "lineBot"
+  ],
+  "author": "Jimmy Wu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ZhongJunJimmy/lineBot_toolBot/issues"
+  },
+  "homepage": "https://github.com/ZhongJunJimmy/lineBot_toolBot#readme",
+  "dependencies": {
+    "linebot": "^1.6.1",
+    "moment": "^2.29.1",
+    "nodemon": "^2.0.15",
+    "taiwan-weather": "^1.1.10"
+  }
+}

@@ -1,0 +1,12 @@
+{"button":{
+    "type": "template",
+    "altText": "This is a buttons template",
+    "template": {
+        "type": "buttons",
+        "title": "地區",
+        "text": "請選擇地區",
+        "actions": [
+        ]
+    }
+  }
+}

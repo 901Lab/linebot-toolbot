@@ -1,0 +1,6 @@
+{
+    "channelId": "YOUR CHANNEL ID",
+    "channelSecret": "YOUR CHANNEL SECRET",
+    "channelAccessToken": "YOUR CHANNEL ACCESS TOKEN",
+    "twKey": "YOUR WEATHER KEY"
+}
