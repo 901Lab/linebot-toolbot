@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/ZhongJunJimmy/lineBot_toolBot#readme",
   "dependencies": {
+    "dotenv": "^10.0.0",
     "linebot": "^1.6.1",
     "log-msg": "^1.0.7",
     "moment": "^2.29.1",

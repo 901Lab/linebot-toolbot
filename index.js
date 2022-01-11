@@ -6,6 +6,12 @@ let constLoc = require('./constant.js').locations;
 var fs = require('fs');
 var tw = require('taiwan-weather');
 var logMsg = require('log-msg');
+require('dotenv').config({ path: 'config.env' });
+
+console.log(process.env.channelId); //channelId
+console.log(process.env.channelSecret); //channelSecret
+console.log(process.env.channelAccessToken); //channelAccessToken
+console.log(process.env.twKey); //twKey
 
 var Timestamp = Date.now();
 //read config file
@@ -29,9 +35,9 @@ if (process.argv.length > 2){
 
 // Line Channel info
 var bot = linebot({
-	channelId: config.channelId,
-	channelSecret: config.channelSecret,
-	channelAccessToken: config.channelAccessToken
+	channelId: process.env.channelId,
+	channelSecret: process.env.channelSecret,
+	channelAccessToken: process.env.channelAccessToken
   });
 //print linebot info in debug mode
 objLogMsg.log("DEBUG", `Linebot info: ${JSON.stringify(bot)}`);
@@ -163,7 +169,7 @@ function getRandomInt(max) {
 function getWeatherInfo(event, userName, location, area){
 	let twFileName = `${userName}_${Timestamp}_`;
 	tw.get(
-		config.twKey,
+		process.env.twKey,
 		{
 			loc: tw.DataEnum.Loc[constLoc[location]],
 			freq: tw.DataEnum.Freq.H72,
