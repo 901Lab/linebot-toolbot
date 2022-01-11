@@ -8,14 +8,7 @@ var tw = require('taiwan-weather');
 var logMsg = require('log-msg');
 require('dotenv').config({ path: 'config.env' });
 
-console.log(process.env.channelId); //channelId
-console.log(process.env.channelSecret); //channelSecret
-console.log(process.env.channelAccessToken); //channelAccessToken
-console.log(process.env.twKey); //twKey
-
 var Timestamp = Date.now();
-//read config file
-let config = JSON.parse(fs.readFileSync('./config.json'));
 //read message file
 let messageJson = JSON.parse(fs.readFileSync('./message.json'));
 let startMsg = '[linebot is ready!]';
