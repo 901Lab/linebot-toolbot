@@ -23,6 +23,7 @@
   "homepage": "https://github.com/ZhongJunJimmy/lineBot_toolBot#readme",
   "dependencies": {
     "linebot": "^1.6.1",
+    "log-msg": "^1.0.7",
     "moment": "^2.29.1",
     "nodemon": "^2.0.15",
     "taiwan-weather": "^1.1.10"
