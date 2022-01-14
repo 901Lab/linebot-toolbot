@@ -74,13 +74,20 @@ bot.on('message', function(event) {
                         getWeatherInfo(event, userName, items[0], items[1]);
 
                     } else if (items[0] === "update" && items.length === 2 && items[1] === process.env.updatePwd) {
+                        let execResult = "更新成功";
+                        objLogMsg.log("INFO", "偵測\"update\"事件");
                         // run git pull in shell script file
                         var yourscript = exec('sh update.sh', (error, stdout, stderr) => {
-                            console.log(stdout);
-                            console.log(stderr);
                             if (error !== null) {
-                                console.log(`exec error: ${error}`);
+                                execResult = error;
+                                objLogMsg.log("DEBUG", `exec error: ${error}`);
                             }
+                        });
+                        objLogMsg.log("INFO", `系統已為最新版本`);
+                        event.reply(execResult).then(function(data) {
+                            objLogMsg.log("INFO", `已傳送: \"${execResult.replace(/\r\n|\n/g,"\\n")}\",至客戶端`);
+                        }).catch(function(error) {
+                            objLogMsg.log("ERROR", error);
                         });
                     }
                     break;
