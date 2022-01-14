@@ -73,7 +73,7 @@ bot.on('message', function(event) {
                         objLogMsg.log("INFO", "偵測\"天氣\"事件,地點為: " + items);
                         getWeatherInfo(event, userName, items[0], items[1]);
 
-                    } else if (items[0] === "update" && items.length === 2) {
+                    } else if (items[0] === "update" && items.length === 2 && items[1] === process.env.updatePwd) {
                         // run git pull in shell script file
                         var yourscript = exec('sh update.sh', (error, stdout, stderr) => {
                             console.log(stdout);
